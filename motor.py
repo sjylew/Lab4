@@ -7,7 +7,7 @@ wp.wiringPiSetupGpio()
 
 #configure input and output pins
 PWMPin = 18
-Standby = 4
+Standby = 5
 AIN1 = 17
 AIN2 = 24
 
