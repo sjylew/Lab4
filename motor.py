@@ -18,52 +18,38 @@ wp.pinMode(AIN1, 1)
 wp.pinMode(AIN2, 1)
 
 try:
-   direction = raw_input("Which direction? Type 'forward' or 'backward' \n")
+   while True:
+      direction = raw_input("Which direction? Type 'forward' or 'backward' \n")
 
-   type(direction)
+      type(direction)
 
-   if (direction == 'forward'):
-      wp.digitalWrite(Standby, 1)
-      wp.digitalWrite(AIN1, 0)
-      wp.digitalWrite(AIN2, 1)
-      for x in range(0, 800):
-         wp.pwmWrite(PWMPin, x) #pwmWrite() takes input values in the range 0 - 1023
-         time.sleep(.01)
+      if (direction == 'forward'):
+         wp.digitalWrite(Standby, 1)
+         wp.digitalWrite(AIN1, 0)
+         wp.digitalWrite(AIN2, 1)
+         for x in range(0, 800):
+            wp.pwmWrite(PWMPin, x) #pwmWrite() takes input values in the range 0 - 1023
+            time.sleep(.01)
 
-      wp.digitalWrite(Standby, 0)
-      wp.digitalWrite(AIN1, 0)
-      wp.digitalWrite(AIN2, 0)
-      time.sleep(5)
+         wp.digitalWrite(Standby, 0)
+         wp.digitalWrite(AIN1, 0)
+         wp.digitalWrite(AIN2, 0)
+         time.sleep(5)
 
-  else if (direction == 'backward'):
-          wp.digitalWrite(Standby, 1)
-          wp.digitalWrite(AIN1, 1)
-          wp.digitalWrite(AIN2, 0)
-          for x in range(0, 800):
-             wp.pwmWrite(PWMPin, x) #pwmWrite() takes input values in the range 0 - 1023
-             time.sleep(.01)
+     else if (direction == 'backward'):
+             wp.digitalWrite(Standby, 1)
+             wp.digitalWrite(AIN1, 1)
+             wp.digitalWrite(AIN2, 0)
+             for x in range(0, 800):
+                wp.pwmWrite(PWMPin, x) #pwmWrite() takes input values in the range 0 - 1023
+                time.sleep(.01)
 
-          wp.digitalWrite(Standby, 0)
-          wp.digitalWrite(AIN1, 0)
-          wp.digitalWrite(AIN2, 0)
-          time.sleep(5)
+             wp.digitalWrite(Standby, 0)
+             wp.digitalWrite(AIN1, 0)
+             wp.digitalWrite(AIN2, 0)
+             time.sleep(5)
 
-    #else if(direction == 'backward')
-     # wp.digitalWrite(Standby, 1)
-      #wp.digitalWrite(AIN1, 1)
-      #wp.digitalWrite(AIN2, 0)
-      #for x in range(0, 800):
-        # wp.pwmWrite(PWMPin, x) #pwmWrite() takes input values in the range 0 - 1023
-        # time.sleep(.01)
-
-     # wp.digitalWrite(Standby, 0)
-     # wp.digitalWrite(AIN1, 0)
-     # wp.digitalWrite(AIN2, 0)
-      #time.sleep(5)
-
-
-
-except:
+ except:
    pass
 finally:
    #clean up
