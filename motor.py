@@ -36,7 +36,7 @@ try:
          wp.digitalWrite(AIN2, 0)
          time.sleep(5)
 
-      else if (direction == 'backward'):
+      if (direction == 'backward'):
          wp.digitalWrite(Standby, 1)
          wp.digitalWrite(AIN1, 1)
          wp.digitalWrite(AIN2, 0)
