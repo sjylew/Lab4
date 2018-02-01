@@ -48,8 +48,7 @@ try:
          wp.digitalWrite(AIN1, 0)
          wp.digitalWrite(AIN2, 0)
          time.sleep(5)
-
- except:
+except:
    pass
 finally:
    #clean up
